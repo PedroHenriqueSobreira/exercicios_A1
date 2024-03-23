@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int calcularDigitoVerificador(int numeroConta) {
+    int soma = 0;
+    while (numeroConta > 0) {
+        soma += numeroConta % 10;
+        numeroConta /= 10;
+    }
+    return soma % 10;
+}
+
+void gerarNumeroContaCompleto(int numeroConta) {
+
+    int digitoVerificador = calcularDigitoVerificador(numeroConta);
+
+
+    printf("Numero de conta completo: %06d-%d\n", numeroConta, digitoVerificador);
+}
+
+int main() {
+    int numeroConta = 7314;
+    
+    gerarNumeroContaCompleto(numeroConta);
+    
+    return 0;
+}
