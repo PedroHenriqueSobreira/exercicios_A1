@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int fibonacciRecursivo(int n) {
+    if (n == 1 || n == 2) {
+        return 1;
+    } else {
+        return fibonacciRecursivo(n - 1) + fibonacciRecursivo(n - 2);
+    }
+}
+
+int main() {
+    int n;
+    
+    printf("Digite o valor de n (n >= 3): ");
+    scanf("%d", &n);
+    
+    if (n < 3) {
+        printf("Por favor, digite um valor maior ou igual a 3.\n");
+        return 1;
+    }
+    
+    printf("O %d-ésimo termo da série de Fibonacci é: %d\n", n, fibonacciRecursivo(n));
+    
+    return 0;
+}
